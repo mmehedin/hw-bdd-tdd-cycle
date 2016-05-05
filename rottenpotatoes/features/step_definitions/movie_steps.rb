@@ -89,9 +89,12 @@ Then /I should not see any movies/ do
   end
 end
 
-Then /^the director of "(.*?)" should be "(.*?)"$/ do |movie_title, new_director|
+Then /^the director of "([^"]*)" should be "([^"]*)"/ do |movie_title, new_director|
   movie = Movie.find_by_title movie_title
-  #movie.director.should == movienew_director
-  assert new_director == movie.director
+  puts movie.inspect
+  puts new_director
+  puts movie_title
+  #movie.director.should == new_director
+  #assert new_director == movie.director
+  assert movie.director == new_director
 end
-

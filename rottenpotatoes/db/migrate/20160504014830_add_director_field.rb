@@ -4,6 +4,6 @@ class AddDirectorField < ActiveRecord::Migration
   end
   
   def down
-    remove_column :movies, director
+    remove_column :movies, :director
   end
 end
